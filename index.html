@@ -16,6 +16,9 @@
         div{
             color: white;
         }
+        .btn-container, .contents{
+            user-select: none;
+        }
         .btn-container{
             padding: 0 15px;
         }
@@ -127,8 +130,10 @@
             $('.contents div').slideUp();
         })
         $('.btn div').click(function(){
+            $('.btn div').css({'pointer-events':'auto'});
             $('.btn div').removeClass('click-active');
             $(this).toggleClass('click-active');
+            $(this).css({'pointer-events':'none'});
         });
         $('.contents div').slideUp(0);
 
